@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2020 at 12:46 PM
+-- Generation Time: Aug 20, 2020 at 06:22 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -34,6 +34,19 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `enquiries`
+--
+
+CREATE TABLE `enquiries` (
+  `buyerId` int(11) NOT NULL,
+  `sellerId` int(11) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `enquiry` json NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -44,7 +57,15 @@ CREATE TABLE `products` (
   `category` smallint(6) NOT NULL,
   `subcategory` smallint(6) NOT NULL,
   `images` json NOT NULL,
-  `available` tinyint(1) NOT NULL DEFAULT '1'
+  `available` tinyint(1) NOT NULL DEFAULT '1',
+  `minQty` int(11) NOT NULL,
+  `unit` tinytext NOT NULL,
+  `specifications` json NOT NULL,
+  `location` tinytext NOT NULL,
+  `price` int(11) NOT NULL,
+  `priceDisclose` tinyint(1) NOT NULL,
+  `views` int(11) NOT NULL,
+  `soldCount` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,7 +92,11 @@ CREATE TABLE `users` (
   `email` tinytext NOT NULL,
   `phoneNo` tinytext NOT NULL,
   `passwd` tinytext NOT NULL,
-  `address` tinytext NOT NULL
+  `address` tinytext NOT NULL,
+  `cart` json NOT NULL,
+  `type` tinytext NOT NULL,
+  `wishlist` json NOT NULL,
+  `adsAvailable` tinyint(4) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
