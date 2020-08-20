@@ -1,0 +1,3 @@
+view part of the application
+
+only renders should be kept here
