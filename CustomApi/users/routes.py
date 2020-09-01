@@ -3,11 +3,13 @@ from CustomApi.models import *
 
 api = Blueprint("users", __name__)
 
+
 @api.route('/users/<int:id>')
 def user_info(id):
     return jsonify(User.query.get(id).as_dict())
 
-@api.route('/users/<int:id>/edit', methods = ['POST'])
+
+@api.route('/users/<int:id>/edit', methods=['POST'])
 def user_edit(id):
     user = User.query.get(id)
     data = request.form
@@ -24,7 +26,7 @@ def user_edit(id):
 
     return jsonify(User.query.get(id).as_dict())
 
+
 @api.route('/users/create')
 def create():
     return 'User Created'
-

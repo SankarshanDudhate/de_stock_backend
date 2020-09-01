@@ -10,6 +10,7 @@ seeder = FlaskSeeder()
 
 from CustomApi.models import *
 
+
 def create_app():
     # instantiate the app
     app = Flask(__name__)
@@ -23,9 +24,13 @@ def create_app():
     from CustomApi.main.routes import main
     from CustomApi.products.routes import api as products
     from CustomApi.users.routes import api as users
+    from CustomApi.cart.routes import api as cart
+    from CustomApi.wishlist.routes import api as wishlist
 
     app.register_blueprint(main)
     app.register_blueprint(products)
     app.register_blueprint(users)
+    app.register_blueprint(cart, url_prefix='/cart')
+    app.register_blueprint(wishlist, url_prefix='/wishlist')
 
     return app

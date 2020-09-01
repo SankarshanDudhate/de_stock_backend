@@ -3,10 +3,12 @@ from CustomApi.models import *
 
 api = Blueprint("products", __name__)
 
-@api.route('/products/', methods = ['GET'])
+
+@api.route('/products/', methods=['GET'])
 def index():
     # print(Product.query.all())
     return jsonify([product.as_dict() for product in Product.query.all()])
+
 
 @api.route('/products/<int:id>/')
 def show(id):
@@ -17,6 +19,7 @@ def show(id):
     product['owner'] = owner
 
     return jsonify(product)
+
 
 @api.route('/products/<int:id>/edit/', methods=['POST'])
 def edit(id):
@@ -29,7 +32,7 @@ def edit(id):
 
         db.session.commit()
 
-    else :
+    else:
         return jsonify("Cannot Change Product Details... You are not owner")
 
     return jsonify(Product.query.get(id).as_dict())
@@ -39,12 +42,12 @@ def edit(id):
 def search():
     if request.json:
         return 'recieved from json'
-    
+
     # print(request.form['category_id'])
-    return jsonify([product.as_dict() for product in Product.query.filter_by(category_id = f'{request.form["category_id"]}').all()])
+    return jsonify(
+        [product.as_dict() for product in Product.query.filter_by(category_id=f'{request.form["category_id"]}').all()])
 
 
 @api.route('/products/<path:something>/')
 def error(something):
     return "URL DOES NOT EXIST"
-
