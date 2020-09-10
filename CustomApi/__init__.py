@@ -25,12 +25,18 @@ def create_app():
     from CustomApi.products.routes import api as products
     from CustomApi.users.routes import api as users
     from CustomApi.cart.routes import api as cart
+    from CustomApi.login.routes import api as login
+    from CustomApi.otp.routes import api as otp
+    from CustomApi.signup.routes import api as signup
     from CustomApi.wishlist.routes import api as wishlist
 
     app.register_blueprint(main)
     app.register_blueprint(products)
     app.register_blueprint(users)
     app.register_blueprint(cart, url_prefix='/cart')
+    app.register_blueprint(login, url_prefix='/login')
+    app.register_blueprint(otp, url_prefix='/otp')
+    app.register_blueprint(signup, url_prefix='/signup')
     app.register_blueprint(wishlist, url_prefix='/wishlist')
 
     return app

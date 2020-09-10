@@ -14,7 +14,7 @@ class freshSeed(Seeder):
     db.session.add(User(
       name = 'Hitesh Joshi',
       email = 'joshihitesh090@gmail.com',
-      phoneNo = '9999999999',
+      phoneNo = '1234567890',
       password = 'Password',
       address = 'my permanent address',
     ))
@@ -23,7 +23,7 @@ class freshSeed(Seeder):
       user = User(
               name = faker.name(),
               email = faker.email(),
-              phoneNo = faker.phone_number(),
+              phoneNo = "1234567890",
               password = "Password",
               address = faker.address()
             )
@@ -44,7 +44,7 @@ class freshSeed(Seeder):
         category_id = faker.random.randrange(1,44),
         subCategory_id = None,
         available = True if faker.random.randrange(2) else False,
-        user_id = faker.random.randrange(1,6)
+        #user_id = faker.random.randrange(1,6)
       )
 
       print(product.name)
