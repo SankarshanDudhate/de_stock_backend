@@ -5,8 +5,8 @@
 
 
 class BaseConfig(object):
-    DEBUG = True
-    SECRET_KEY = 'my secret key'
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost/ilx'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-    PRESERVE_CONTEXT_ON_EXCEPTION = False
+	DEBUG = True
+	SECRET_KEY = 'my secret key'
+	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:bootcamp@localhost/ilx'
+	SQLALCHEMY_TRACK_MODIFICATIONS = False
+	PRESERVE_CONTEXT_ON_EXCEPTION = False
