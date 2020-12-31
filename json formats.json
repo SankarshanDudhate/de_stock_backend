@@ -1,0 +1,8 @@
+//Product.enquiries format
+//replay has to be put in with enquiry
+[{"enquiry":{"user_id":"1","enquiry_date":"2020-09-21","buyer_enquiry":"I wanted to enquire that what would be the price of above mentioned quantity and how can I come and pickup my order from your site. Also what time will be suitable for you?","quantity":"300 kg","replied":false},"reply":{"user_id":"1","enquiry_date":"2020-09-21","seller_reply":"It will cost you a fortune and you can pick it up however you like. Also no time will be suitable for me."}}]
+
+
+//escaped version
+//this gets stored in db after json.dumps() in python
+"[{\"reply\": {\"seller_id\": 0, \"date\": \"2020-09-22\", \"seller_reply\": \"It will cost you a fortune and you can pick it up however you like. Also no time will be suitable for me.\"}, \"enquiry\": {\"replied\": true, \"buyer_id\": \"1\", \"quantity\": \"300 kg\", \"date\": \"2020-09-21\", \"buyer_enquiry\": \"I wanted to enquire that what would be the price of above mentioned quantity and how can I come and pickup my order from your site. Also what time will be suitable for you?\"}}]"

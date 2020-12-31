@@ -1,0 +1,8 @@
+Flask
+Flask-Cors
+Flask-Seeder
+Flask-SQLAlchemy
+pymysql
+requests
+sqlalchemy
+faker
